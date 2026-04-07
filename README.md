@@ -41,6 +41,7 @@ The long-term goal is to develop a smarter early-warning layer that could eventu
 
 ```text
 AUMP/
+├── app.py
 ├── src/
 │   ├── generate_data.py
 │   ├── train_model.py
