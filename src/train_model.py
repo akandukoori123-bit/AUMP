@@ -94,9 +94,9 @@ plt.title("ROC Comparison (held-out sequences)")
 plt.legend()
 plt.tight_layout()
 plt.savefig("results/roc_curve_comparison.png")
-plt.show()
 
-# Save best model
+# Save best model BEFORE showing plot, so a closed/killed plot
+# can never prevent the model from being saved
 best_model, best_name, best_auc = (
     (lr, "LogisticRegression", auc_lr) if auc_lr >= auc_rf
     else (rf, "RandomForest", auc_rf)
@@ -104,3 +104,5 @@ best_model, best_name, best_auc = (
 os.makedirs("models", exist_ok=True)
 joblib.dump(best_model, "models/model.pkl")
 print(f"\nSaved {best_name} (AUC {best_auc:.3f}) to models/model.pkl")
+
+plt.show()

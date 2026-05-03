@@ -14,7 +14,7 @@ import os
 import numpy as np
 import pandas as pd
 
-HORIZON = 5            # timesteps ahead the label looks
+HORIZON = 10            # timesteps ahead the label looks
 DANGER_BPM = 60        # threshold defining a "crash"
 LENGTH = 30            # timesteps per sequence
 N_SEQUENCES = 500
